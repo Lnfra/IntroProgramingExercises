@@ -1,4 +1,4 @@
-package main.com.intro;
+package com.intro;
 
 /**
  * Created by lnfra on 14/12/16.

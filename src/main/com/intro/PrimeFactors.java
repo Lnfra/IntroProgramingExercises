@@ -1,4 +1,4 @@
-package main.com.intro;
+package com.intro;
 
 /*
   Prime Factors Exercise
