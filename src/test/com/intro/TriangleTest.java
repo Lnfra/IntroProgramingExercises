@@ -22,4 +22,11 @@ public class TriangleTest {
     String result = tri.printAsterisk();
     assertEquals("*", result);
   }
+
+  @Test
+  public void printHorizontalLineTest() throws Exception {
+    String result = tri.printHorizontalLine(8);
+    String expected = "********";
+    assertEquals(expected, result);
+  }
 }

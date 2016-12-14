@@ -4,16 +4,16 @@ package com.intro;
  * Created by lnfra on 14/12/16.
  */
 public class Triangle {
-  public String printAsterisk() {
-    String asterisk = "*";
-    System.out.println(asterisk);
-    return asterisk;
-  }
 
 /*
   Print one asterisk to the console.
   Example: *
 */
+  public String printAsterisk() {
+    String asterisk = "*";
+    System.out.println(asterisk);
+    return asterisk;
+  }
 
 
 /*
@@ -21,6 +21,19 @@ public class Triangle {
   Given a number n, print n asterisks on one line.
   Example when n=8:    ********
 */
+  public String printHorizontalLine(int size) {
+    StringBuilder builder = new StringBuilder();
+
+    for (int i = 0; i < size ; i++) {
+      builder.append("*");
+    }
+
+    return builder.toString();
+  }
+
+
+
+
 
 
 /*
