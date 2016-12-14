@@ -88,8 +88,6 @@ public class Diamond {
     String output = builder.toString();
     System.out.println(output);
     return output;
-
-
   }
 
 /*
@@ -101,5 +99,49 @@ public class Diamond {
    ***
     *
 */
+
+  public String printDiamondWithName(int size, String name) {
+    /*
+      Observed that if the name is the middle row
+      To create the diamond pattern we can, put level 2 on the top and bottom of the name
+      and put level 1 on the top and bottom of that to form the below
+
+       Level 1 = (name.length - (level * 2 - 1 asterisks)/2 spaces) + (level * 2 - 1 asterisks)
+       Level 2 = (name.length - (level * 2 - 1 asterisks)/2 spaces) + (level * 2 - 1 asterisks)
+       Level 3 = (0 space) + name
+       Level 2 = (name.length - (level * 2 - 1 asterisks)/2 spaces) + (level * 2 - 1 asterisks)
+       Level 1 = (name.length - (level * 2 - 1 asterisks)/2 spaces) + (level * 2 - 1 asterisks)
+
+       As the level get further from the middle the space increases depending on the length on the name
+     */
+
+    StringBuilder builder = new StringBuilder();
+
+    for (int level = size; level > 0 ; level--) {
+
+      if(level == size){
+        //if in the center level
+        builder.append(name + "\n");
+      }
+      else {
+
+        int numOfAsterisks = level * 2 - 1;
+        String asteriskStr = Triangle.buildString(numOfAsterisks, "*") + "\n";
+
+        int numOfSpaces = (name.length() - numOfAsterisks) / 2;
+        String spaceStr = Triangle.buildString(numOfSpaces, " ");
+
+        //prepend to the top
+        builder.insert(0, spaceStr + asteriskStr);
+        //append to the bottom
+        builder.append(spaceStr + asteriskStr);
+      }
+
+    }
+
+    String output = builder.toString();
+    System.out.println(output);
+    return output;
+  }
 
 }
