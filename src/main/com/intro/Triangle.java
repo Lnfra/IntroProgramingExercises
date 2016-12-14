@@ -4,6 +4,12 @@ package com.intro;
  * Created by lnfra on 14/12/16.
  */
 public class Triangle {
+  public String printAsterisk() {
+//    String asterisk = *;
+//    System.out.println(asterisk);
+//    return asterisk;
+    return "";
+  }
 
 /*
   Print one asterisk to the console.
