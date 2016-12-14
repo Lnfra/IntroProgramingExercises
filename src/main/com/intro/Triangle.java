@@ -54,16 +54,25 @@ public class Triangle {
     return output;
   }
 
-
-
-
 /*
   Draw a right triangle
-  Given a number n, print n lines, each with one more asterisk than the last (i.e. one on the first line, two on the second,etc.)
+  Given a number n, print n lines, each with one more asterisk than the last
+  (i.e. one on the first line, two on the second,etc.)
   Example when n=3:
     *
     **
     ***
 */
+  public String printRightTriangle(int size) {
+    StringBuilder builder = new StringBuilder();
+
+    for (int i = 0; i < size ; i++) {
+      builder.append(buildString(i + 1, "*") + "\n");
+    }
+
+    String output = builder.toString();
+    System.out.println(output);
+    return output;
+  }
 
 }
