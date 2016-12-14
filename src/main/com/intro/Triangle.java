@@ -15,6 +15,18 @@ public class Triangle {
     return asterisk;
   }
 
+/*
+  Helper method used by printVerticalLine and printHorizontalLine
+ */
+  private String buildString(int size, String initial) {
+    StringBuilder builder = new StringBuilder();
+
+    for (int i = 0; i < size ; i++) {
+      builder.append(initial);
+    }
+
+    return builder.toString();
+  }
 
 /*
   Draw a horizontal line
@@ -22,18 +34,10 @@ public class Triangle {
   Example when n=8:    ********
 */
   public String printHorizontalLine(int size) {
-    StringBuilder builder = new StringBuilder();
-
-    for (int i = 0; i < size ; i++) {
-      builder.append("*");
-    }
-
-    String output = builder.toString();
+    String output = buildString(size, "*");
     System.out.println(output);
-
     return output;
   }
-
 
 
 /*
@@ -43,7 +47,14 @@ public class Triangle {
     *
     *
     *
-* /
+*/
+  public String printVerticalLine(int size) {
+    String output = buildString(size, "*\n");
+    System.out.println(output);
+    return output;
+  }
+
+
 
 
 /*
