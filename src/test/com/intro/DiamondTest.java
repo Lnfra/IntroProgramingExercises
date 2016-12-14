@@ -23,4 +23,12 @@ public class DiamondTest {
     String expected = "  *\n" + " ***\n" + "*****\n";
     assertEquals(expected, result);
   }
+
+  @Test
+  public void printDiamondTest() throws Exception {
+    String result = dia.printDiamond(3);
+    String expected = "  *\n" + " ***\n" + "*****\n" + " ***\n" + "  *\n";
+    assertEquals(expected, result);
+
+  }
 }

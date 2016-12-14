@@ -48,6 +48,50 @@ public class Diamond {
     *
 */
 
+  public String printDiamond(int size) {
+    /*
+      Observed that if the center horizontal str is considered level 3
+      To create the diamond pattern we can, put level 2 on the top and bottom of level 3
+      and put level 1 on the top and bottom of that to form the below
+
+       Level 1 = (2 space) + (level * 2 - 1 asterisks)
+       Level 2 = (1 space) + (level * 2 - 1 asterisks)
+       Level 3 = (0 space) + (level * 2 - 1 asterisks)
+       Level 2 = (1 space) + (level * 2 - 1 asterisks)
+       Level 1 = (2 space) + (level * 2 - 1 asterisks)
+
+       As the level get further from the middle the space increases
+     */
+
+    StringBuilder builder = new StringBuilder();
+    int numOfSpaces = 0;
+
+    for (int level = size; level > 0 ; level--) {
+
+      String spaceStr = Triangle.buildString(numOfSpaces, " ");
+      String asteriskStr = Triangle.buildString(level * 2 - 1, "*") + "\n";
+
+      if(level == size){
+        //if in the center level
+        builder.append(spaceStr + asteriskStr );
+      }
+      else {
+        //prepend to the top
+        builder.insert(0, spaceStr + asteriskStr);
+        //append to the bottom
+        builder.append(spaceStr + asteriskStr);
+      }
+
+      numOfSpaces++;
+    }
+
+    String output = builder.toString();
+    System.out.println(output);
+    return output;
+
+
+  }
+
 /*
   Diamond with Name
   Given a number n, print a centered diamond with your name in place of the middle line. Example for n=3:
