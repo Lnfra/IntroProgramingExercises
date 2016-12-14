@@ -16,7 +16,7 @@ public class Triangle {
   }
 
 /*
-  Helper method used by printVerticalLine and printHorizontalLine
+  Helper method used by printVerticalLine, printHorizontalLine and printRightTriangle
  */
   private String buildString(int size, String initial) {
     StringBuilder builder = new StringBuilder();
