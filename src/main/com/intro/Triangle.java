@@ -28,11 +28,11 @@ public class Triangle {
       builder.append("*");
     }
 
-    return builder.toString();
+    String output = builder.toString();
+    System.out.println(output);
+
+    return output;
   }
-
-
-
 
 
 
