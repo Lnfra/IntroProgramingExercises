@@ -5,10 +5,9 @@ package com.intro;
  */
 public class Triangle {
   public String printAsterisk() {
-//    String asterisk = *;
-//    System.out.println(asterisk);
-//    return asterisk;
-    return "";
+    String asterisk = "*";
+    System.out.println(asterisk);
+    return asterisk;
   }
 
 /*
