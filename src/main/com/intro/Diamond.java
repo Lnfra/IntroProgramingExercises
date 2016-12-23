@@ -117,25 +117,22 @@ public class Diamond {
 
     StringBuilder builder = new StringBuilder();
 
-    for (int level = size; level > 0 ; level--) {
+    //At the center level, append the name
+    builder.append(name + "\n");
 
-      if(level == size){
-        //if in the center level
-        builder.append(name + "\n");
-      }
-      else {
+    //Add all other levels above and below the center
+    for (int level = size - 1; level > 0 ; level--) {
 
-        int numOfAsterisks = level * 2 - 1;
-        String asteriskStr = Triangle.buildString(numOfAsterisks, "*") + "\n";
+      int numOfAsterisks = level * 2 - 1;
+      String asteriskStr = Triangle.buildString(numOfAsterisks, "*") + "\n";
 
-        int numOfSpaces = (name.length() - numOfAsterisks) / 2;
-        String spaceStr = Triangle.buildString(numOfSpaces, " ");
+      int numOfSpaces = (name.length() - numOfAsterisks) / 2;
+      String spaceStr = Triangle.buildString(numOfSpaces, " ");
 
-        //prepend to the top
-        builder.insert(0, spaceStr + asteriskStr);
-        //append to the bottom
-        builder.append(spaceStr + asteriskStr);
-      }
+      //prepend to the top
+      builder.insert(0, spaceStr + asteriskStr);
+      //append to the bottom
+      builder.append(spaceStr + asteriskStr);
 
     }
 
