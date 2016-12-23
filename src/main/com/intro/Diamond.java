@@ -126,8 +126,7 @@ public class Diamond {
       int numOfAsterisks = level * 2 - 1;
       String asteriskStr = Triangle.buildString(numOfAsterisks, "*") + "\n";
 
-      int numOfSpaces = (name.length() - numOfAsterisks) / 2;
-      String spaceStr = Triangle.buildString(numOfSpaces, " ");
+      String spaceStr = Triangle.buildString((name.length() - numOfAsterisks) / 2, " ");
 
       //prepend to the top
       builder.insert(0, spaceStr + asteriskStr);
